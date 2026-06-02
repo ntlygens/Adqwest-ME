@@ -7,6 +7,31 @@
 	"name": "adqwest-me",
 	"main": "./dist/server/server.mjs",
 	"compatibility_date": "2026-06-02",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "adqwest_db",
+			"database_id": "7b83dddf-194a-4c86-82c5-68d84ceb7ff1",
+			"remote": true
+		}
+	],
+	"env": {
+		"production": {
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "adqwest_db",
+					"database_id": "7b83dddf-194a-4c86-82c5-68d84ceb7ff1"
+				}
+			],
+			"routes": [
+				{
+					"pattern": "adqwestme.com/*",
+					"zone_name": "adqwestme.com"
+				}
+			]
+		}
+	},
 	"assets": {
 		"binding": "ASSETS",
 		"directory": "./dist/browser"
