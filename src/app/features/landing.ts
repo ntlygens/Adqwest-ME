@@ -2,11 +2,14 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestimonialsService } from '../services/testimonials.service';
 import { DisplayComponent } from '../core-comps/display-component';
+import { NavbarComponent } from "../core-comps/navbar";
+import { Footer } from '../core-comps/footer';
 
 @Component({
   selector: 'app-landing',
-  imports: [CommonModule, DisplayComponent],
+  imports: [CommonModule, DisplayComponent, NavbarComponent, Footer],
   template: ` 
+    <app-navbar></app-navbar>
     <section class="hero">
       <div class="hero-content">
         <h1>Smart Media Solutions for Every Market</h1>
@@ -57,6 +60,8 @@ import { DisplayComponent } from '../core-comps/display-component';
     </section>
 
     <app-display-component *ngIf="showModal()" (closeModal)="closeModal()"></app-display-component>
+    <app-footer></app-footer>
+
   `,
   styles: [`
     .hero {
