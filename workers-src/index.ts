@@ -44,21 +44,24 @@ app.post("/api/demo-request", async (c) => {
           .run();
 
      // EMAIL (Resend style)
-     await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-               Authorization: `Bearer ${c.env.RESEND_API_KEY}`,
-               "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-               from: "Adqwest-ME [noreply@adqwestme.com](mailto:noreply@adqwestme.com)",
-               to: email,
-               subject: "Demo Request Received",
-               html: `<h2>Thanks ${name}</h2><p>We will contact you soon.</p>`,
-          }),
-     });
+     async function sendEmail({to, subject, html}: { to: string; subject: string; html: string }) {
+          const resp = await fetch("https://api.resend.com/emails", {
+               method: "POST",
+               headers: {
+                    Authorization: `Bearer ${c.env.RESEND_API_KEY}`,
+                    "Content-Type": "application/json",
+               },
+               body: JSON.stringify({
+                    from: "Adqwest-ME [noreply@adqwestme.com](mailto:noreply@adqwestme.com)",
+                    to,
+                    subject: "Demo Request Received",
+                    html: `<h2>Thanks ${name}</h2><p>We will contact you soon.</p>`,
+               }),
+          });
 
-     return c.json({ success: true, id: insert.meta.last_row_id });
+          return resp.ok;
+     // return c.json({ success: true, id: insert.meta.last_row_id });
+     }
 });
 
 // -------------------- ADMIN LOGIN --------------------
