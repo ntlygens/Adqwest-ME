@@ -16,7 +16,7 @@ import { RouterOutlet } from '@angular/router';
       height: 100vh;
 
       padding: 10px 20px;
-      justify-content: center; 
+      justify-content: flex-start; 
       margin: 0 0 3rem;
     }
   `]

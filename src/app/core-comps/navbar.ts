@@ -26,6 +26,7 @@ styles: [`
       position: sticky;
       top: 0;
       z-index: 100;
+      opacity: 0.85;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       }
       .navbar-content {

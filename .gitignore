@@ -10,12 +10,15 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+yarn-debug.log
 
 # IDEs and editors
 .idea/
 .project
 .classpath
 .c9/
+*.swp
+*.swo
 *.launch
 .settings/
 *.sublime-workspace
@@ -49,3 +52,4 @@ Thumbs.db
 !.dev.vars.example
 .env*
 !.env.example
+.env.local*
