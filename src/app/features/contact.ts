@@ -386,7 +386,7 @@ import { ApiService } from '../services/api.service';
     }
     `]
 })
-export class ContactComponent {
+export class Contact {
   formData = {
     name: '',
     company: '',
@@ -466,7 +466,3 @@ export class ContactComponent {
     this.formData = { name: '', company: '', market: '', email: '', phone: '', message: '' };
   }
 }
-
-
-
-export class Contact {}
