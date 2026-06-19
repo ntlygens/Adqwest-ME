@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:adqwest-me": "node dist/adqwest-me/server/server.mjs",
     "preview": "npm run build && wrangler dev",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "npm run build && wrangler deploy --env=\"\"",
     "cf-typegen": "wrangler types"
   },
   "private": true,
@@ -23,6 +23,7 @@
     "@angular/platform-server": "^21.2.0",
     "@angular/router": "^21.2.0",
     "@angular/ssr": "^21.2.13",
+    "@cloudflare/workers-types": "^4.20260605.1",
     "resend": "^6.12.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -31,7 +32,6 @@
     "@angular/build": "^21.2.13",
     "@angular/cli": "^21.2.13",
     "@angular/compiler-cli": "^21.2.0",
-    "@cloudflare/workers-types": "^4.20260602.1",
     "@types/node": "^20.19.41",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
