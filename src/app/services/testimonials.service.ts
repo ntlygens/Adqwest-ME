@@ -26,7 +26,7 @@ export class TestimonialsService {
     {
       text: "The automated content curation is a game-changer for our multi-location strategy.",
       author: "Robert Thompson",
-      role: "VP Operations, Elite Hotel Group",
+      role: "VP Operations, Elite Hotel Groups",
       market: "hotels"
     }
   ];
